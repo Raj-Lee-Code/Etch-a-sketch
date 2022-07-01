@@ -6,7 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch!</title>
 </head>
+<link rel="stylesheet" href="styles.css">
 <body>
-    
+
+<div class="SketchPad">
+    <!-- This is a container for the array of divs that will be inside-->
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+    <divInner></divInner>
+</div>
+
+
+
+
+<div class="slider">
+    <input type="range" min="1" max="50" value="10" id="myRange">
+    <p>Sketch Pad Resolution: <span id="value"></span></p>
+</div>
+
+
+    <script>
+        
+        const slider = document.getElementById("myRange");
+        const output = document.getElementById("value");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() 
+        {
+        output.innerHTML = this.value;
+        }
+
+        function sketchPad(){
+            let newDiv = document.createElement("div");
+        }
+
+    </script>
 </body>
 </html>
