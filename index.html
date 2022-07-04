@@ -11,42 +11,27 @@
 
 <div id="divContainer" class="SketchPad">
     <!-- This is a container for the array of divs that will be inside-->
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
-    <divInner></divInner>
+
 </div>
 
 <button onclick="alert('Hello World')">Click Me</button>
 
 
 <div class="slider">
-    <input type="range" min="1" max="50" value="10" id="myRange">
+    <input type="range" min="1" max="100" value="10" id="myRange">
     <p>Sketch Pad Resolution: <span id="value"></span></p>
 </div>
 
 
     <script>
+
+        for(let i=0;i<10;i++)
+        {
+        let newDiv = document.createElement("div");
+        let divContainter = document.getElementById("divContainer");
+        newDiv.classList.add('divShadow');
+        divContainer.appendChild(newDiv); }   
+
         const slider = document.getElementById("myRange");
         const output = document.getElementById("value");
         
@@ -55,7 +40,8 @@
 
         output.innerHTML = slider.value;
 
-        slider.oninput = function sliderValue(){
+        slider.oninput = function sliderValue()
+        {
         output.innerHTML = this.value;
         
         let container = document.querySelector('#divContainer');
@@ -64,18 +50,11 @@
         for(let i=0;i<slider.value;i++){
         let newDiv = document.createElement("div");
         let divContainter = document.getElementById("divContainer");
-        newDiv.classList.add('divShadow');
-        divContainer.appendChild(newDiv);  
-        }   
-
+        newDiv.classList.add('divEmpty');
+        divContainer.appendChild(newDiv); }   
         }
         
-        removeAllChildNodes(container);
-        function removeAllChildNodes(parent){
-        while(parent.firstchild){
-            parent.removeChild(parent.firstChild)
-        }
-    }
+
     </script>
 </body>
 </html>
