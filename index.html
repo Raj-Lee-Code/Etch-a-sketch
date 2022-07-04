@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="styles.css">
 <body>
 
-<div class="SketchPad">
+<div id="divContainer" class="SketchPad">
     <!-- This is a container for the array of divs that will be inside-->
     <divInner></divInner>
     <divInner></divInner>
@@ -37,7 +37,7 @@
     <divInner></divInner>
 </div>
 
-
+<button onclick="alert('Hello World')">Click Me</button>
 
 
 <div class="slider">
@@ -47,20 +47,35 @@
 
 
     <script>
-        
         const slider = document.getElementById("myRange");
         const output = document.getElementById("value");
+        
+    
+
+
         output.innerHTML = slider.value;
 
-        slider.oninput = function() 
-        {
+        slider.oninput = function sliderValue(){
         output.innerHTML = this.value;
-        }
+        
+        let container = document.querySelector('#divContainer');
+        container.innerHTML='';
 
-        function sketchPad(){
-            let newDiv = document.createElement("div");
-        }
+        for(let i=0;i<slider.value;i++){
+        let newDiv = document.createElement("div");
+        let divContainter = document.getElementById("divContainer");
+        newDiv.classList.add('divShadow');
+        divContainer.appendChild(newDiv);  
+        }   
 
+        }
+        
+        removeAllChildNodes(container);
+        function removeAllChildNodes(parent){
+        while(parent.firstchild){
+            parent.removeChild(parent.firstChild)
+        }
+    }
     </script>
 </body>
 </html>
